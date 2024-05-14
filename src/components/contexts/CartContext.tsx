@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useState } from "react";
 import {ProductProps} from "../../pages/home";
-import { removeItem } from "localforage";
+
 
 interface CartContextData {
   cart: CartProps[]; // Lista de produtos no carrinho

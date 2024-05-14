@@ -1,6 +1,5 @@
 import { useState, useEffect, useContext } from "react"
 import { BsCartPlus } from "react-icons/bs"
-import { Link } from "react-router-dom"
 import { api } from "../../services/api"
 import { useNavigate } from "react-router-dom"
 import { CartContext } from '../../components/contexts/CartContext';
