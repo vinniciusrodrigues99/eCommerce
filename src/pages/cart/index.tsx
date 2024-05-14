@@ -12,7 +12,11 @@ export function Cart() {
   useEffect(() => {
     const total = cart.reduce((call, item) => call + (item.amount*item.price), 0) // Calculando o total do carrinho
     return setTotal(total);
-  }, [cart])
+  }, [])
+
+  function alertaErro() {
+    alert("Erro!")
+  }
 
   return (
     <div className="w-full max-w-7x1 mx-auto">
@@ -32,7 +36,7 @@ export function Cart() {
               src={itemCarrinho.cover}
               alt={itemCarrinho.title}
               className="w-28"
-              />
+              onClick={() => alertaErro()}/>
 
               <strong className="text-center"> {itemCarrinho.price.toLocaleString("pt-BR", {
                 currency: "BRL", 
@@ -54,7 +58,7 @@ export function Cart() {
                   +
                 </button>
               </div> 
-              <strong className="float-right">
+              <strong className="float-right mr-2">
                 {itemCarrinho.total.toLocaleString("pt-BR", {
                   currency: "BRL",
                   style: "currency"
@@ -63,7 +67,7 @@ export function Cart() {
           </section>
         ))
       }
-      <p className="font-bold mt-4"> Total: {total.toLocaleString("pt-BR", {
+      <p className="font-bold mt-4 ml-3"> Total: {total.toLocaleString("pt-BR", {
         currency: "BRL",
         style: "currency"
       })} </p>

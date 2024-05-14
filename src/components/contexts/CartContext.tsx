@@ -38,6 +38,13 @@ function CartProvider({children} : CartProviderProps) {
         amount: item.amount + 1, // Adiciona mais um item
         total: item.total + novoProduto.price // Atualiza o total
       }: item);
+
+      const gerandoErro = newCart.find(item => item.id === novoProduto.id);
+      if (gerandoErro && gerandoErro.amount >= 4) {
+        alert("Erro!")
+        throw new Error("Boa! Não é possível adicionar mais que três produtos no carrinho");
+      }
+
       setCart(newCart);
       return;
     }
