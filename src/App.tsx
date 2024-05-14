@@ -18,6 +18,10 @@ const router = createBrowserRouter([ // Criando o BrowserRouter
       {
         path: "/products/:id", // Rota dinâmica
         element: <Product />
+      },
+      {
+      path: "*",
+      element: <h1> 404 - Página não encontrada </h1>
       }
     ]
   }

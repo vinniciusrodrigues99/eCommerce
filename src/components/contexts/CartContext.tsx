@@ -40,7 +40,7 @@ function CartProvider({children} : CartProviderProps) {
       }: item);
 
       const gerandoErro = newCart.find(item => item.id === novoProduto.id);
-      if (gerandoErro && gerandoErro.amount >= 4) {
+      if (gerandoErro && gerandoErro.amount >= 5) {
         alert("Erro!")
         throw new Error("Boa! Não é possível adicionar mais que três produtos no carrinho");
       }
@@ -56,6 +56,7 @@ function CartProvider({children} : CartProviderProps) {
     }
     setCart([...cart, data])
   }
+
   function removeItemCarrinho(produto: CartProps) {
 
     const indexItem = cart.findIndex(item => item.id === produto.id); // Verifica se o item já existe no carrinho, caso exista, retorna o índice do item, caso contrário, retorna -1
